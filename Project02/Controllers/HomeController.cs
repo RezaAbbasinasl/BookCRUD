@@ -20,6 +20,16 @@ namespace Project02.Controllers
             return View(book);
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
