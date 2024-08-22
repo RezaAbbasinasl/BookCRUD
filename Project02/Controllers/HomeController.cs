@@ -19,15 +19,42 @@ namespace Project02.Controllers
             var book = bookDAL.GetAllBook();
             return View(book);
         }
-
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
-
-        public IActionResult Edit()
+        [HttpPost]
+        public IActionResult Create(Book book)
         {
-            return View();
+            if(ModelState.IsValid)
+            {
+                bookDAL.AddBook(book);
+                return RedirectToAction("Index");
+            }
+            return View(book);
+        }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var book = bookDAL.GetById(id);
+
+            if (book == null)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(book);
+        }
+        [HttpPost]
+        public IActionResult Edit(Book book)
+        {
+            if(ModelState.IsValid)
+            {
+                
+                bookDAL.EditBook(book);
+                return RedirectToAction("Index");
+            }
+            return View(book);
         }
 
         public IActionResult Privacy()

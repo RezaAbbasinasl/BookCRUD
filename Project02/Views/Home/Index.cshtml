@@ -27,11 +27,12 @@
                 <td>@item.Price</td>
                 <td>@item.PublishDate</td>
                 <td>
-                    <a class="btn btn-primary" asp-action="Edit">Edit</a>
+                    @* <a class="btn btn-primary" asp-action="Edit">Edit</a> *@
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BookId })
                     <a class="btn btn-info" asp-action="Detail">Detail</a>
                     <a class="btn btn-danger" asp-action="Delete">Delete</a>
-                    @* @Html.ActionLink("Edit", "Edit")
-                    @Html.ActionLink("Update", "Update")
+                    
+                    @*@Html.ActionLink("Update", "Update")
                     @Html.ActionLink("Delete", "Delete") *@
                 </td>
             </tr>
