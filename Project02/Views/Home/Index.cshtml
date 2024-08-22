@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<Book>
+
+<a class="btn btn-success" asp-action="Create">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Titel</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Price</th>
+            <th>PublishDate</th>
+            <th>Oprations</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.BookId</td>
+                <td>@item.Titel</td>
+                <td>@item.Author</td>
+                <td>@item.Genre</td>
+                <td>@item.Price</td>
+                <td>@item.PublishDate</td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit">Edit</a>
+                    <a class="btn btn-info" asp-action="Detail">Detail</a>
+                    <a class="btn btn-danger" asp-action="Delete">Delete</a>
+                    @* @Html.ActionLink("Edit", "Edit")
+                    @Html.ActionLink("Update", "Update")
+                    @Html.ActionLink("Delete", "Delete") *@
+                </td>
+            </tr>
+        }
+    </tbody>
+    
+</table>
