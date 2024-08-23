@@ -7,7 +7,7 @@ namespace Project02.DAL
     public class BookDAL
     {
 
-        private string connectionString = @"SERVER=.\SQL2022;DATABASE = Test;USER ID = sa; PASSWORD = Reza3108; TrustServerCertificate=True;";
+        private string connectionString = @"SERVER=.\SQL2022;DATABASE = Test;USER ID = sa; PASSWORD = ; TrustServerCertificate=True;";
 
         public List<Book> GetAllBook()
         {
